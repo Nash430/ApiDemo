@@ -1,0 +1,222 @@
+.App {
+  text-align: center;
+  font-size: 50%;
+
+  .TabBar {
+    .ant-tabs-nav-operations {
+      display: none;
+    }
+
+    .ant-tabs-nav {
+      margin-bottom: 0px;
+
+
+      .ant-tabs-nav-list {
+        gap: 10%;
+
+        .ant-tabs-tab {
+          background-color: #365956;
+
+          .ant-tabs-tab-btn {
+            color: white;
+          }
+
+        }
+
+        .ant-tabs-tab-active {
+          background-color: #49BFB3;
+        }
+      }
+
+    }
+
+
+
+
+
+    .RowStyle {
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #49BFB3, white);
+      overflow: scroll;
+
+      .CardStyle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 400px;
+        background-color: #3659565c;
+        border-radius: 4px;
+        margin: 10px;
+        padding: 10px;
+
+        .cardInner {
+          padding: 10px;
+
+          .cardBody {
+            p {
+              text-align: left;
+            }
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 53%;
+          max-height: 70%;
+          max-width: 100%;
+          object-fit: contain;
+        }
+
+        p {
+          text-align: center;
+          margin-bottom: 0px;
+          cursor: default;
+
+          span {
+            color: #365956;
+            font-size: 15px;
+
+          }
+        }
+      }
+
+    }
+  }
+
+  .modalStyle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .modalContent {
+      width: 40%;
+      height: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
+      /* Higher value to make the modal appear on top of the overlay */
+      animation: fadeInModal 0.5s ease forwards;
+      overflow-y: auto;
+      max-height: 100vh;
+
+      .modalBody {
+        max-height: 600px;
+        img{
+          width: 100%;
+        }
+       
+        .closeButton {
+          display: inline-block;
+          cursor: pointer;
+          margin-top: 10px;
+          background-color: #49BFB3;
+          color: white;
+          padding: 8px 15px;
+          border-radius: 4px;
+          transition: background-color 0.3s ease;
+          text-align: right;
+
+          &:hover {
+            background-color: #365956;
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+
+    .modalContent::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .modalContent::-webkit-scrollbar-thumb {
+      background-color: #49BFB3;
+      border-radius: 2px;
+    }
+  }
+
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+body::-webkit-scrollbar-track {
+  display: none;
+}
+
+body {
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
